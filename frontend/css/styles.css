@@ -1,0 +1,101 @@
+*{box-sizing:border-box;font-family:Segoe UI, Roboto, Arial, sans-serif}
+body{margin:0;background:#f7f7f9;color:#222}
+.container{max-width:900px;margin:36px auto;padding:16px}
+/* Navbar: sobre, minimaliste */
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:transparent;border-bottom:1px solid rgba(0,0,0,0.04);position:sticky;top:0;z-index:50}
+.site-nav .nav-logo{font-weight:700;color:#0b3b66;text-decoration:none;margin-right:12px}
+.site-nav .nav-links{display:flex;gap:12px}
+.site-nav .nav-links a{color:#334455;text-decoration:none;padding:6px 8px;border-radius:6px;font-size:14px}
+.site-nav .nav-links a:hover{background:rgba(11,59,102,0.05);color:#0b3b66}
+.site-nav .nav-links a.active{background:rgba(11,59,102,0.08);color:#0b3b66}
+.site-nav .nav-links a:focus{outline:2px solid rgba(11,59,102,0.08);outline-offset:2px}
+
+/* Top Market Cap page styling */
+.container h1, .container h2{color:#0b3b66}
+.container main section#top-mc{margin-top:12px}
+.data-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(11,59,102,0.04);}
+.data-table thead th{padding:12px 16px;text-align:left;color:#334455;font-weight:700;background:linear-gradient(180deg, rgba(11,59,102,0.02), rgba(0,0,0,0));border-bottom:1px solid rgba(0,0,0,0.06)}
+.data-table tbody td{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,0.04);color:#222}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table tbody tr:hover{background:linear-gradient(90deg, rgba(11,59,102,0.02), rgba(11,59,102,0.01))}
+.data-table a{color:#0b3b66;text-decoration:none;font-weight:600}
+.data-table .mc-value{font-weight:700;color:#0b3b66}
+.data-table .price-value{color:#0b3b66}
+/* small button style in table */
+.btn-view{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px 14px;background:#0b3b66;color:#fff;border-radius:10px;text-decoration:none;font-weight:700;text-align:center}
+.btn-view:hover{opacity:0.95}
+.btn-view .btn-main{font-size:14px;line-height:1;color:#ffffff}
+.btn-view .btn-note{font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;opacity:0.95;display:block}
+.data-table td > .btn-view{display:inline-flex}
+
+/* Small screens: make table scrollable */
+@media (max-width:720px){
+	.data-table{display:block;overflow:auto;white-space:nowrap}
+}
+
+header{display:flex;justify-content:center;margin-bottom:16px}
+#search{width:100%;max-width:600px;padding:10px 12px;border-radius:8px;border:1px solid #ccc;font-size:16px}
+main{background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+.container main {display:block}
+#ticker-panel{display:flex;gap:16px;align-items:flex-start}
+#ticker-info{flex:0 0 260px;background:#f4f6f8;padding:12px;border-radius:8px}
+#ticker-info h2{margin:0 0 8px 0}
+#price-row{font-size:20px;margin-bottom:8px}
+#current-price{font-weight:700}
+#price-change{margin-left:8px;color:green}
+.global-score{margin-top:8px;padding:8px;border-radius:6px;background:#f1f5f9;font-weight:600}
+.global-score .score-num{font-size:18px;color:#0b3b66;margin-right:8px}
+.global-score.buy{background:#e6ffef}
+.global-score.sell{background:#ffecec}
+.global-score.hold{background:#fff8e6}
+
+/* Full-width global score under the chart */
+.global-score-chart{margin-top:10px;padding:10px;border-radius:8px;background:#fafafa;border:1px solid #eee;font-weight:700;display:flex;gap:12px;align-items:center}
+.global-score-chart .label{color:#666;font-size:13px}
+.global-score-chart .value{font-size:20px;color:#0b3b66}
+.global-score-chart.buy{background:#e6ffef}
+.global-score-chart.sell{background:#ffecec}
+.global-score-chart.hold{background:#fff8e6}
+#chart-wrap{flex:1;min-width:300px}
+canvas{width:100%!important;height:360px!important}
+#stats{display:grid;grid-template-columns:1fr;gap:6px;font-size:14px}
+#extra{margin-top:16px}
+#history-table{width:100%;border-collapse:collapse}
+#history-table th,#history-table td{border-bottom:1px solid #eee;padding:6px 8px;text-align:left}
+
+/* Loader */
+#loader{position:fixed;left:50%;top:80px;transform:translateX(-50%);background:#222;color:#fff;padding:8px 12px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.2);z-index:60}
+.hidden{display:none}
+
+/* Recommendations colors */
+#recommendations div{padding:6px 4px;border-radius:4px;margin-top:6px}
+.rec-buy{background:#e6ffef;color:#056827}
+.rec-hold{background:#fff8e6;color:#805400}
+.rec-sell{background:#ffecec;color:#7a1919}
+
+/* Agent pipeline grid: 3 cards per row */
+.agent-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.agent-card{padding:8px;border-radius:6px;min-height:60px;display:flex;flex-direction:column;align-items:flex-start}
+.agent-card .agent-title{font-weight:600;margin-bottom:4px}
+.agent-card .agent-meta{font-size:12px;color:#444;margin-bottom:6px}
+.agent-card .agent-desc{font-size:12px;color:#333;opacity:0.9}
+
+/* Responsive: stack to 1 column on narrow screens */
+@media (max-width:720px){
+	.agent-list{grid-template-columns:repeat(1,1fr)}
+}
+
+/* Autocomplete suggestions */
+.suggestions {position:absolute;background:#fff;border:1px solid #ddd;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.08);max-height:320px;overflow:auto;z-index:80;width:100%;}
+.suggestion-item{padding:8px 10px;cursor:pointer;border-bottom:1px solid #f1f1f1}
+.suggestion-item:last-child{border-bottom:none}
+.suggestion-item:hover,.suggestion-item.active{background:#f0f8ff}
+
+/* Fundamentals */
+#fundamentals{margin-top:10px}
+.metric{margin-top:8px}
+.metric-row{display:flex;gap:8px;align-items:center}
+.metric-value{margin-left:6px;color:#0b3b66}
+.desc{font-size:12px;color:#666;margin-top:4px}
+
+

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil - Graphique</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="navbar-root"></div>
+  <div class="container">
+    <div id="loader" class="hidden">Chargement…</div>
+    <header>
+      <input id="search" type="search" placeholder="Ticker (ex: AAPL) puis Entrée" autocomplete="off">
+    </header>
+    <main>
+      <section id="ticker-panel">
+        <div id="ticker-info">
+          <h2 id="symbol-name">—</h2>
+          <div id="price-row">
+            <span id="current-price">--</span>
+            <span id="price-change"></span>
+          </div>
+          <div id="stats">
+            <div><strong>Exchange:</strong> <span id="exchange">—</span></div>
+            <div><strong>52w High:</strong> <span id="high52">—</span></div>
+            <div><strong>52w Low:</strong> <span id="low52">—</span></div>
+          </div>
+        </div>
+        <div id="chart-wrap">
+          <canvas id="myChart"></canvas>
+        </div>
+      </section>
+      <section id="extra">
+        <h3>Historique (résumé)</h3>
+        <table id="history-table">
+          <thead><tr><th>Date</th><th>Close</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="js/navbar.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
