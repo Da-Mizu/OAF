@@ -8,6 +8,9 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 
+# Constante pour la génération de données reproductibles
+RANDOM_SEED = 42
+
 
 def generer_donnees_exemple():
     """Génère des données boursières simulées pour la démonstration"""
@@ -15,7 +18,7 @@ def generer_donnees_exemple():
     dates = pd.date_range(end=datetime.now(), periods=252, freq='D')
     
     # Simuler un prix avec une tendance et de la volatilité
-    np.random.seed(42)
+    np.random.seed(RANDOM_SEED)
     prix_initial = 150.0
     rendements = np.random.normal(0.001, 0.02, 252)  # Rendements journaliers
     prix = prix_initial * (1 + rendements).cumprod()
@@ -127,7 +130,7 @@ def comparer_titres_exemple():
     resultats = []
     
     for i, symbole in enumerate(symboles):
-        np.random.seed(42 + i)
+        np.random.seed(RANDOM_SEED + i)
         dates = pd.date_range(end=datetime.now(), periods=252, freq='D')
         
         # Différentes caractéristiques pour chaque titre
