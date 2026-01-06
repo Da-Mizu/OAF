@@ -1,0 +1,60 @@
+# Configuration et exemples pour OAF
+
+## Symboles boursiers populaires
+
+### Actions Technologie (US)
+AAPL    # Apple Inc.
+MSFT    # Microsoft Corporation
+GOOGL   # Alphabet Inc. (Google)
+AMZN    # Amazon.com Inc.
+META    # Meta Platforms Inc. (Facebook)
+TSLA    # Tesla Inc.
+NVDA    # NVIDIA Corporation
+NFLX    # Netflix Inc.
+INTC    # Intel Corporation
+AMD     # Advanced Micro Devices
+
+### Actions Françaises (Euronext Paris)
+MC.PA   # LVMH
+OR.PA   # L'Oréal
+SAN.PA  # Sanofi
+AI.PA   # Air Liquide
+BNP.PA  # BNP Paribas
+TTE.PA  # TotalEnergies
+ORA.PA  # Orange
+
+### Indices boursiers
+^GSPC   # S&P 500
+^DJI    # Dow Jones Industrial Average
+^IXIC   # NASDAQ Composite
+^FCHI   # CAC 40 (France)
+^FTSE   # FTSE 100 (UK)
+
+### Cryptomonnaies
+BTC-USD # Bitcoin
+ETH-USD # Ethereum
+BNB-USD # Binance Coin
+
+### ETFs populaires
+SPY     # SPDR S&P 500 ETF
+QQQ     # Invesco QQQ Trust (NASDAQ-100)
+VOO     # Vanguard S&P 500 ETF
+
+## Exemples de commandes
+
+# Analyser Apple sur 1 an
+python app.py AAPL 1y
+
+# Analyser Tesla sur 6 mois
+python app.py TSLA 6mo
+
+# Analyser LVMH sur 2 ans
+python app.py MC.PA 2y
+
+# Comparer plusieurs actions tech (mode interactif)
+# python app.py
+# Choisir option 2, puis entrer: AAPL,MSFT,GOOGL
+
+# Comparer des cryptomonnaies (mode interactif)
+# python app.py
+# Choisir option 2, puis entrer: BTC-USD,ETH-USD
